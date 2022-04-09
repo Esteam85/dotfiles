@@ -19,3 +19,7 @@ export PATH="${PATH}:${SLEDGE_BIN}"
 
 #wic
 export PROJECT_PATH=$PWD
+export WIC_REPOS=$HOME/Develop/wic
+
+#NAVI
+export NAVI_PATH="$DOTFILES_PATH/doc/navi"

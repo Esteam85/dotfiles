@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Esteban Contreras
+	email = esteban.contreras@walmart.com
+# Please adapt and uncomment the following lines:
+#	name = Esteban Contreras
+#	email = esteban.contreras@walmart.com
+[init]
+	defaultBranch = main

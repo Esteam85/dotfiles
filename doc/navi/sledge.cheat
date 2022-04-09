@@ -1,6 +1,7 @@
-% sledge
+% sledge-wic
 
-# Easy tool to coonect to WCNP Cluster with Sledge
+# Easy tool to list and connect to WIC namespace  WCNP clusters with Sledge
+# Reading kitt.yml file from back-end automaticly retrive clusters ids
 sledge connect <cluster_id>
 
-$ cluster_id: yq eval .deploy.stages.'[].target'.cluster_id.'[]' $WIC_REPOS/wic-backend/kitt.yml | awk '{print $1}'
+$ cluster_id: yq eval .deploy.stages.'[].target'.cluster_id.'[]' $WIC_REPOS/*wic-backend/kitt.yml | awk '{print $1}'

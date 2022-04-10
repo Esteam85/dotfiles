@@ -23,3 +23,6 @@ export WIC_REPOS=$HOME/Develop/wic
 
 #NAVI
 export NAVI_PATH="$DOTFILES_PATH/doc/navi"
+
+#BREW
+export HOMEBREW_BUNDLE_FILE_PATH="$DOTFILES_PATH/mac/brew"

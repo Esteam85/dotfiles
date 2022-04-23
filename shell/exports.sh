@@ -29,3 +29,6 @@ export HOMEBREW_BUNDLE_FILE_PATH="$DOTFILES_PATH/mac/brew"
 
 #MAIN PRODUCT REPO
 export MAIN_PRODUCT_REPO=$WIC_REPOS/wic-backend
+
+#Oh-my-zsh
+export ZSH_CUSTOM="$DOTFILES_PATH/mac/oh-my-zsh/custom"

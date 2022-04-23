@@ -1,2 +1,2 @@
-export DOTFILES_PATH="/Users/estebancontreras/.dotfiles"
-export ZSH="/Users/estebancontreras/.oh-my-zsh"
+export DOTFILES_PATH="$HOME/.dotfiles"
+export ZSH="$HOME/.oh-my-zsh"

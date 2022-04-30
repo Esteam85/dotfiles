@@ -10,8 +10,11 @@ export GONOSUMDB="gecgithub01.walmart.com/*"
 
 #GOLANG
 export PATH=/usr/local/go/bin:$PATH
+
+#GOLANG
 export GOPATH=~/go
 export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$GOPATH:$PATH
 
 #WALMART
 export SLEDGE_BIN=/Users/estebancontreras/.sledge/bin

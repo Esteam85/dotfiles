@@ -21,7 +21,7 @@ export SLEDGE_BIN=/Users/estebancontreras/.sledge/bin
 export PATH="${PATH}:${SLEDGE_BIN}"
 
 #wic
-export PROJECT_PATH=$PWD
+export PROJECT_PATH=$HOME/Develop/wic/wic-backend
 export WIC_REPOS=$HOME/Develop/wic
 
 #NAVI

@@ -28,5 +28,9 @@ source $(brew --prefix nvm)/nvm.sh
 #oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+zle         -N    _display_dirmove
+bindkey  '^h'  _display_dirmove
+
+zle -N _reverse_search
+bindkey '^r' _reverse_search

@@ -8,3 +8,7 @@ alias cat='ccat'
 
 #os
 alias o.='open .'
+alias cdd='cd $HOME/Develop'
+alias s.='source $HOME/.zshrc'
+alias ls='exa'
+alias zshrc='code $DOTFILES_PATH/shell/zsh/.zshrc'

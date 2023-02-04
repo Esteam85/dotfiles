@@ -7,3 +7,6 @@
 [submodule "mac/oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = mac/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "mac/oh-my-zsh/custom/plugins/zsh-aliases-exa"]
+	path = mac/oh-my-zsh/custom/plugins/zsh-aliases-exa
+	url = https://github.com/DarrinTisdale/zsh-aliases-exa.git

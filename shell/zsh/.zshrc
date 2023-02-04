@@ -1,7 +1,8 @@
+#shell init
+source "$DOTFILES_PATH/shell/init.sh"
+
 #ZSH options
 setopt PROMPT_SUBST
-
-
 
 ZSH_THEME="cloud"
 plugins=(
@@ -14,6 +15,7 @@ plugins=(
     colored-man-pages
     command-not-found
     copy-pasta
+    zsh-aliases-exa
     z
     )
 
@@ -36,6 +38,3 @@ bindkey '^r' _reverse_search
 
 #oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-#shell init
-source "$DOTFILES_PATH/shell/init.sh"

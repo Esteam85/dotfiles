@@ -3,8 +3,7 @@
 ```sh
 cd
 git clone git@github.com:Esteam85/dotfiles.git .dotfiles
-git submodule init \ 
-git submodule update
+git submodule init && git submodule update
 ```
 2. Run symlinks
 ```sh

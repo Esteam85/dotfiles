@@ -9,5 +9,6 @@
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "explorer.confirmDragAndDrop": false
 }

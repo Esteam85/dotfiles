@@ -48,7 +48,7 @@ fi
 
 # Install dotfiles bundle
 echo "💪 Intalling bundle from Brewfile!"
-brew bundle --file="$HOMEBREW_BUNDLE_FILE" --force
+brew bundle --file="$HOME/.dotfiles/mac/brew/Brewfile" --force
 retval=$?
 if [ $retval -eq 0 ]; then
     echo "✅Homebrew Bundle installed successfully!"
@@ -67,10 +67,15 @@ sh $HOME/.dotfiles/mac/mac-os.sh
 echo "✅Mac defaults confured successfully!"
 
 #Restart
-echo "Restart is needed, do you wish to restart?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) sudo shutdown -r now; echo "💫 Restarting..."; break;;
-        No ) echo "👏🥳 Installation finished 👀without restarting⚠️";exit;;
-    esac
-done
+echo "Restart is needed, do you wish to restart? (y/n)"
+read yn
+if [ "$yn" = "y" ]; then
+    sudo shutdown -r now
+    echo "💫 Restarting..."
+else
+    echo "👏🥳 Installation finished 👀without restarting⚠️"
+    exit
+fi
+
+
+

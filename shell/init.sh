@@ -1,3 +1,3 @@
-source "$DOTFILES_PATH/shell/aliases.sh"
-source "$DOTFILES_PATH/shell/exports.sh"
-source "$DOTFILES_PATH/shell/functions.sh"
+source "$HOME/.dotfiles/shell/aliases.sh"
+source "$HOME/.dotfiles/shell/exports.sh"
+source "$HOME/.dotfiles/shell/functions.sh"

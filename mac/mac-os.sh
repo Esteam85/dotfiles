@@ -19,4 +19,7 @@ defaults write ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInpu
 defaults write com.apple.LaunchServices/com.apple.launchservices.secure.plist LSHandlers -array-add '{LSHandlerContentType= "public.html";LSHandlerRoleAll= "com.google.chrome";}'
 
 # Hide and Show The Dock
-defaults write com.apple.dock autohide -bool true && defaults write com.apple.dock autohide-time-modifier -float 0.1 && defaults write com.apple.dock autohide-delay -float 0 && defaults write com.apple.dock autohide-fullscreen-delayed -bool false && defaults write com.apple.dock tilesize -int 90
+defaults write com.apple.dock autohide -bool true && defaults write com.apple.dock autohide-time-modifier -float 0.1 && defaults write com.apple.dock autohide-delay -float 0 && defaults write com.apple.dock autohide-fullscreen-delayed -bool false && defaults write com.apple.dock tilesize -int 80
+
+# Show all files in Finder
+defaults write com.apple.finder AppleShowAllFiles -bool TRUE

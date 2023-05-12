@@ -38,3 +38,5 @@ bindkey '^r' _reverse_search
 
 #oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

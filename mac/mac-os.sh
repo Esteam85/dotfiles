@@ -23,3 +23,6 @@ defaults write com.apple.dock autohide -bool true && defaults write com.apple.do
 
 # Show all files in Finder
 defaults write com.apple.finder AppleShowAllFiles -bool TRUE
+
+# Use keyboard navigation to move focus between controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3

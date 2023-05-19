@@ -6,7 +6,7 @@ rm $HOME/.gitconfig
 rm $HOME/.hushlogin
 rm $HOME/Library/Application\ Support/Rocket/rocket.db
 rm $HOME/Library/Application\ Support/Code/User/settings.json
-
+rm $HOME/icloud
 
 #ZSH
 ln -s $HOME/.dotfiles/shell/zsh/.zshrc $HOME/.zshrc

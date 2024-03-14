@@ -15,7 +15,6 @@ plugins=(
     colored-man-pages
     command-not-found
     copy-pasta
-    zsh-aliases-exa
     z
     )
 

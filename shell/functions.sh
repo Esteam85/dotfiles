@@ -27,7 +27,7 @@ _display_dirmove() {
 }
 
 # oxxo-labs
-function pipeline-to-dev() {
+function pipeline_to_dev() {
   echo "🤖 Starting Pipeline to Dev ⭐🏃‍♂️"
   colima start
   echo "🤖 Colima started ✅"
@@ -39,7 +39,7 @@ function pipeline-to-dev() {
   echo "🤖 Deployed to Dev finished ✅🚀"
 }
 
-function deploy-to-qa() {
+function deploy_to_qa() {
   echo "🤖🚀 Deploying to QA ⭐🏃‍♂️"
   make apply-deployment-k8s stage_mioxxo=staging aws_account=500107401034 ns-k8s=mioxxo-qa
   echo "🤖🚀 Deployed to Dev finished ✅🚀"

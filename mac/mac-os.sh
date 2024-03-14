@@ -26,3 +26,6 @@ defaults write com.apple.finder AppleShowAllFiles -bool TRUE
 
 # Use keyboard navigation to move focus between controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Fn key for change keyboard input language
+defaults write -g com.apple.keyboard.fnState -bool true

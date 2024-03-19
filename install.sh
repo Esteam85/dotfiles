@@ -86,7 +86,4 @@ if [ "$yn" = "y" ]; then
 else
     echo "👏🥳 Installation finished👀 without restarting⚠️"
     exit
-fi
-
-
-
+fig

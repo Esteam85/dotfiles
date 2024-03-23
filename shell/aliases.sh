@@ -20,3 +20,6 @@ alias lh='eza -dl .* --group-directories-first'
 alias ll='eza -al --group-directories-first'
 alias ls='eza -alF --color=always --sort=size | grep -v /'
 alias lt='eza -al --sort=modified'
+
+# dotfiles
+alias idf='$HOME/.dotfiles/install.sh'

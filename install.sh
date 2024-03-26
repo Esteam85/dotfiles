@@ -1,7 +1,12 @@
 #!/bin/bash
 set -e
+# Load in the functions and animations
+source $DOTFILES_PATH/shell/loading/bash_loading_animations.sh
+# Run BLA::stop_loading_animation if the script is interrupted
+trap BLA::stop_loading_animation SIGINT
 
 #Updating Dotfiles
+BLA::start_loading_animation "${BLA_classic[@]}"
 echo "🆙 Updating Dotfiles Repository"
 git -C $DOTFILES_PATH pull origin main
 echo "✅ Dotfiles Repository Updated"
@@ -48,10 +53,9 @@ else
     "💔 Error installing Init Shell files $retval" >&2
 fi
 
-
 # Install dotfiles bundle
 echo "💪 Intalling bundle from Brewfile!"
-brew bundle --file="$HOME/.dotfiles/mac/brew/Brewfile" --force
+brew bundle --quiet --file="$HOME/.dotfiles/mac/brew/Brewfile" --force
 retval=$?
 if [ $retval -eq 0 ]; then
     echo "✅ Homebrew Bundle installed successfully!"
@@ -82,6 +86,7 @@ fi
 echo "💪 Config Mac defaults"
 sh $HOME/.dotfiles/mac/mac-os.sh
 echo "✅ Mac defaults confured successfully!"
+BLA::stop_loading_animation &> /dev/null
 
 #Restart
 echo "⚠️ Restart is needed, do you wish to restart? (y/n)"

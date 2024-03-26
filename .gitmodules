@@ -10,3 +10,6 @@
 [submodule "mac/oh-my-zsh/custom/plugins/zsh-aliases-exa"]
 	path = mac/oh-my-zsh/custom/plugins/zsh-aliases-exa
 	url = https://github.com/DarrinTisdale/zsh-aliases-exa.git
+[submodule "shell/loading"]
+	path = shell/loading
+	url = https://github.com/Silejonu/bash_loading_animations.git

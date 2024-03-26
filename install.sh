@@ -1,5 +1,11 @@
 #!/bin/bash
 set -e
+
+#Updating Dotfiles
+echo "🆙 Updating Dotfiles Repository"
+git -C $DOTFILES_PATH pull origin main
+echo "✅ Dotfiles Repository Updated"
+
 #Install Oh My Zsh
 echo "💪 Installing Oh-My-Zsh"
 if [ ! -d "$ZSH" ]; then

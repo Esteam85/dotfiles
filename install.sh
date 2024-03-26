@@ -90,7 +90,7 @@ BLA::stop_loading_animation &> /dev/null
 
 #Restart
 echo "⚠️ Restart is needed, do you wish to restart? (y/n)"
-read yn
+read -t 5 yn
 if [ "$yn" = "y" ]; then
     sudo shutdown -r now
     echo "💫 Restarting..."

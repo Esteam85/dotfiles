@@ -28,7 +28,7 @@ defaults write com.apple.finder AppleShowAllFiles -bool TRUE
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Fn key for change keyboard input language
-defaults write -g com.apple.keyboard.fnState -bool true
+defaults write -g com.apple.keyboard.fnState -bool false
 
 # Disabling Autocorrect with a Defaults Command Line String in OS X
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false

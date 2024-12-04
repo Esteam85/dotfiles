@@ -1,14 +1,14 @@
 #!/bin/bash
 set -e
 # Load in the functions and animations
-source $DOTFILES_PATH/shell/loading/bash_loading_animations.sh
+source ~/.dotfiles/shell/loading/bash_loading_animations.sh
 # Run BLA::stop_loading_animation if the script is interrupted
 trap BLA::stop_loading_animation SIGINT
 
 #Updating Dotfiles
 BLA::start_loading_animation "${BLA_classic[@]}"
 echo "🆙 Updating Dotfiles Repository"
-git -C $DOTFILES_PATH pull origin main
+git -C ~/.dotfiles pull origin main
 echo "✅ Dotfiles Repository Updated"
 
 #Install Oh My Zsh

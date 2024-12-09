@@ -85,7 +85,12 @@ fi
 # Run mac-os script(default macosx configs)
 echo "💪 Config Mac defaults"
 sh $HOME/.dotfiles/mac/mac-os.sh
-echo "✅ Mac defaults confured successfully!"
+echo "✅ Mac defaults configured successfully!"
+
+# Run docker and colima installation script, only works for M1
+echo "💪 Installing Docker and Colima for M1"
+sh $HOME/.dotfiles/mac/docker/install-docker-colima.sh
+echo "✅ Docker and Colima installed successfully!"
 BLA::stop_loading_animation &> /dev/null
 
 #Restart

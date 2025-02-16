@@ -12,52 +12,28 @@ var rootCmd = &cobra.Command{
 	Short: "Esteam dotfiles installation tool",
 	Long:  "Esteam dotfiles installation tool",
 	RunE: func(cmd *cobra.Command, _ []string) error {
-		fmt.Println("Esteam dotfiles installation tool")
-		dotfilesPath, err := getDotfilesPath()
-		if err != nil {
-			return err
-		}
-		err = updateDotfilesRepository(dotfilesPath)
-		if err != nil {
-			return err
-		}
-		installingOhMyZSH()
-		err = downloadGitSubmodules(dotfilesPath)
+		fmt.Println("🚀Esteam dotfiles installation tool")
+
+		installStepsRunner, err := NewInstallStepBuilder(&InstallStepsConfig{
+			installBrewBundle: false,
+		})
 		if err != nil {
 			return err
 		}
 
-		err = installInitShellFiles(dotfilesPath)
+		err = installStepsRunner.UpdateDotfilesRepository().
+			InstallingOhMyZSH().
+			DownloadGitSubmodules().
+			InstallInitShellFiles().
+			InstallBrewBundle().
+			CreateSymlinks().
+			ConfigureMacDefaults().
+			ConfigureExtensionsDefaults().
+			InstallDockerAndColima().
+			Error()
 		if err != nil {
 			return err
 		}
-
-		/*err = installBrewBundle(dotfilesPath)
-		if err != nil {
-			return err
-		}*/
-
-		err = createSymlinks(dotfilesPath)
-		if err != nil {
-			return err
-		}
-
-		createDevelopmentFolders()
-		err = configureMacDefaults(dotfilesPath)
-		if err != nil {
-			return err
-		}
-
-		err = configureExtensionsDefaults(dotfilesPath)
-		if err != nil {
-			return err
-		}
-
-		err = installDockerAndColima(dotfilesPath)
-		if err != nil {
-			return err
-		}
-
 		promptRestart()
 		return nil
 	},

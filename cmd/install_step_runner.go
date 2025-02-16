@@ -1,5 +1,7 @@
 package cmd
 
+import "github.com/esteam85/dotfiles/cmd/steps"
+
 type InstallStepsConfig struct {
 	installBrewBundle bool
 }
@@ -22,7 +24,7 @@ func NewInstallStepBuilder(config *InstallStepsConfig) (*InstallStepsRunner, err
 
 func (i *InstallStepsRunner) UpdateDotfilesRepository() *InstallStepsRunner {
 	if i.err == nil {
-		if err := updateDotfilesRepository(i.dotfilesPath); err != nil {
+		if err := steps.UpdateDotfilesRepository(i.dotfilesPath); err != nil {
 			i.err = err
 		}
 	}
@@ -31,13 +33,13 @@ func (i *InstallStepsRunner) UpdateDotfilesRepository() *InstallStepsRunner {
 
 func (i *InstallStepsRunner) InstallingOhMyZSH() *InstallStepsRunner {
 	if i.err == nil {
-		installingOhMyZSH()
+		steps.InstallingOhMyZSH()
 	}
 	return i
 }
 func (i *InstallStepsRunner) DownloadGitSubmodules() *InstallStepsRunner {
 	if i.err == nil {
-		if err := downloadGitSubmodules(i.dotfilesPath); err != nil {
+		if err := steps.DownloadGitSubmodules(i.dotfilesPath); err != nil {
 			i.err = err
 		}
 	}
@@ -45,7 +47,7 @@ func (i *InstallStepsRunner) DownloadGitSubmodules() *InstallStepsRunner {
 }
 func (i *InstallStepsRunner) InstallInitShellFiles() *InstallStepsRunner {
 	if i.err == nil {
-		if err := installInitShellFiles(i.dotfilesPath); err != nil {
+		if err := steps.InstallInitShellFiles(i.dotfilesPath); err != nil {
 			i.err = err
 		}
 	}
@@ -53,7 +55,7 @@ func (i *InstallStepsRunner) InstallInitShellFiles() *InstallStepsRunner {
 }
 func (i *InstallStepsRunner) InstallBrewBundle() *InstallStepsRunner {
 	if i.err == nil && i.config.installBrewBundle {
-		if err := installBrewBundle(i.dotfilesPath); err != nil {
+		if err := steps.InstallBrewBundle(i.dotfilesPath); err != nil {
 			i.err = err
 		}
 	}
@@ -62,7 +64,7 @@ func (i *InstallStepsRunner) InstallBrewBundle() *InstallStepsRunner {
 
 func (i *InstallStepsRunner) CreateSymlinks() *InstallStepsRunner {
 	if i.err == nil {
-		if err := createSymlinks(i.dotfilesPath); err != nil {
+		if err := steps.CreateSymlinks(i.dotfilesPath); err != nil {
 			i.err = err
 		}
 	}
@@ -71,14 +73,14 @@ func (i *InstallStepsRunner) CreateSymlinks() *InstallStepsRunner {
 
 func (i *InstallStepsRunner) CreateDevelopmentFolders() *InstallStepsRunner {
 	if i.err == nil {
-		createDevelopmentFolders()
+		steps.CreateDevelopmentFolders()
 	}
 	return i
 }
 
 func (i *InstallStepsRunner) ConfigureMacDefaults() *InstallStepsRunner {
 	if i.err == nil {
-		if err := configureMacDefaults(i.dotfilesPath); err != nil {
+		if err := steps.ConfigureMacDefaults(i.dotfilesPath); err != nil {
 			i.err = err
 		}
 	}
@@ -86,7 +88,7 @@ func (i *InstallStepsRunner) ConfigureMacDefaults() *InstallStepsRunner {
 }
 func (i *InstallStepsRunner) ConfigureExtensionsDefaults() *InstallStepsRunner {
 	if i.err == nil {
-		if err := configureExtensionsDefaults(i.dotfilesPath); err != nil {
+		if err := steps.ConfigureExtensionsDefaults(i.dotfilesPath); err != nil {
 			i.err = err
 		}
 	}
@@ -94,7 +96,7 @@ func (i *InstallStepsRunner) ConfigureExtensionsDefaults() *InstallStepsRunner {
 }
 func (i *InstallStepsRunner) InstallDockerAndColima() *InstallStepsRunner {
 	if i.err == nil {
-		if err := installDockerAndColima(i.dotfilesPath); err != nil {
+		if err := steps.InstallDockerAndColima(i.dotfilesPath); err != nil {
 			i.err = err
 		}
 	}

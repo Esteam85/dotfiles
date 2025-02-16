@@ -1,11 +1,11 @@
-package cmd
+package steps
 
 import (
 	"fmt"
 	"os"
 )
 
-func createDevelopmentFolders() {
+func CreateDevelopmentFolders() {
 	home := os.Getenv("HOME")
 	folders := []string{
 		home + "/Development",

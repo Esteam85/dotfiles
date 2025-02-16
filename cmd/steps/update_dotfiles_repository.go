@@ -1,11 +1,11 @@
-package cmd
+package steps
 
 import (
 	"fmt"
 	"os/exec"
 )
 
-func updateDotfilesRepository(dotfilesPath string) error {
+func UpdateDotfilesRepository(dotfilesPath string) error {
 	fmt.Println("🆙 Updating Dotfiles Repository")
 	err := exec.Command("git", "-C", dotfilesPath, "pull", "origin", "main").Run()
 	if err != nil {

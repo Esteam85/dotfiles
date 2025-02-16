@@ -1,4 +1,4 @@
-package cmd
+package steps
 
 import (
 	"fmt"
@@ -18,7 +18,7 @@ func isColimaInstalled() bool {
 	return err == nil
 }
 
-func installDockerAndColima(dotfilesPath string) error {
+func InstallDockerAndColima(dotfilesPath string) error {
 
 	if isDockerInstalled() && isColimaInstalled() {
 		fmt.Println("👍 Docker and Colima is already installed.")

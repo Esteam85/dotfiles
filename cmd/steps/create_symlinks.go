@@ -1,11 +1,11 @@
-package cmd
+package steps
 
 import (
 	"fmt"
 	"os/exec"
 )
 
-func createSymlinks(dotfilesPath string) error {
+func CreateSymlinks(dotfilesPath string) error {
 	fmt.Println("💪 Creating symlinks")
 	err := exec.Command("sh", fmt.Sprintf("%s/symlinks/links.sh", dotfilesPath)).Run()
 	if err != nil {

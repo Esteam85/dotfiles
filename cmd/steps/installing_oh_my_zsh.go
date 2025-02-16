@@ -1,4 +1,4 @@
-package cmd
+package steps
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"os/exec"
 )
 
-func installingOhMyZSH() {
+func InstallingOhMyZSH() {
 	fmt.Println("💪 Installing Oh-My-Zsh")
 	zshPath, exists := os.LookupEnv("ZSH")
 

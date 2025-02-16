@@ -1,4 +1,4 @@
-package cmd
+package steps
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func downloadGitSubmodules(dotfilesPath string) error {
+func DownloadGitSubmodules(dotfilesPath string) error {
 	fmt.Println("💪 Checking git submodules status in .dotfiles!")
 	output, err := exec.Command("git", "-C", dotfilesPath, "submodule", "status").CombinedOutput()
 	if err != nil {

@@ -1,4 +1,4 @@
-package cmd
+package steps
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"os/exec"
 )
 
-func installBrewBundle(dotfilesPath string) error {
+func InstallBrewBundle(dotfilesPath string) error {
 	fmt.Println("💪 Installing bundle from Brewfile!")
 	fmt.Println(fmt.Sprintf("--file=%s/mac/brew/Brewfile", dotfilesPath))
 	cmd := exec.Command("brew", "bundle", fmt.Sprintf("--file=%s/mac/brew/Brewfile", dotfilesPath), "--force")

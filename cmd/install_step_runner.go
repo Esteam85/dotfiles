@@ -78,7 +78,7 @@ func (i *InstallStepsRunner) CreateDevelopmentFolders() *InstallStepsRunner {
 
 func (i *InstallStepsRunner) ConfigureMacDefaults() *InstallStepsRunner {
 	if i.err == nil {
-		if err := createSymlinks(i.dotfilesPath); err != nil {
+		if err := configureMacDefaults(i.dotfilesPath); err != nil {
 			i.err = err
 		}
 	}

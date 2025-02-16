@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
 	"os"
 	"os/exec"
@@ -13,6 +14,12 @@ var rootCmd = &cobra.Command{
 	Long:  "Esteam dotfiles installation tool",
 	RunE: func(cmd *cobra.Command, _ []string) error {
 		fmt.Println("🚀Esteam dotfiles installation tool")
+
+		prompt := promptui.Select{
+			Label: "⚠️ Restart is needed, do you wish to restart?",
+			Items: []string{Yes, No},
+		}
+		prompt.Run()
 
 		installStepsRunner, err := NewInstallStepBuilder(&InstallStepsConfig{
 			installBrewBundle: false,

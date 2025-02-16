@@ -3,6 +3,7 @@ alias c.='(code $PWD &>/dev/null &)'
 alias w.='(webstorm $PWD &>/dev/null &)'
 alias g.='(goland $PWD &>/dev/null &)'
 alias i.='(idea $PWD &>/dev/null &)'
+alias p.='(pycharm $PWD &>/dev/null &)'
 
 #apps
 alias cat='ccat'

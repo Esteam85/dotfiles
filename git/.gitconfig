@@ -1,10 +1,13 @@
 # This is Git's per-user configuration file.
 [user]
-		name = Esteban Contreras
-		email = contacto@econtreras.net
+	name = Esteban Enrique Contreras Tapia
+	email = esteban.econtreras@mercadolibre.cl
 [init]
 	defaultBranch = main
 [url "git@github.com:"]
 	insteadOf = git://github.com/
 	insteadOf = https://github.com//
 	insteadOf = https://github.com/
+[url "git@github.com-emu:melisource/"]
+	insteadOf = https://github.com/melisource/
+	insteadOf = git@github.com:melisource/

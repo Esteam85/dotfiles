@@ -87,6 +87,11 @@ echo "💪 Config Mac defaults"
 sh $HOME/.dotfiles/mac/mac-os.sh
 echo "✅ Mac defaults configured successfully!"
 
+# Run mac-os script(default macosx configs)
+echo "💪 Config extensions defaults apps"
+sh $HOME/.dotfiles/mac/duti/default-app-extensions.sh
+echo "✅ Config extensions defaults apps configured successfully!"
+
 # Run docker and colima installation script, only works for M1
 echo "💪 Installing Docker and Colima for M1"
 sh $HOME/.dotfiles/mac/docker/install-docker-colima.sh

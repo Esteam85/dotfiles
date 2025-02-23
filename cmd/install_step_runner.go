@@ -46,10 +46,10 @@ func (i *InstallStepsRunner) UpdateDotfilesRepository() *InstallStepsRunner {
 		for {
 			select {
 			case <-done:
-				if i.err != nil {
+				_ = bar.Set(100)
+				if i.err == nil {
 					fmt.Println("👍")
 				}
-				_ = bar.Set(100)
 				wg.Done()
 				return
 			default:

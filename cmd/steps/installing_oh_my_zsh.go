@@ -7,9 +7,7 @@ import (
 )
 
 func InstallingOhMyZSH() {
-	fmt.Println("💪 Installing Oh-My-Zsh")
 	zshPath, exists := os.LookupEnv("ZSH")
-
 	if exists && zshPath != "" {
 		fmt.Println("✅ Oh My Zsh is already installed at:", zshPath)
 		return

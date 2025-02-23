@@ -39,7 +39,7 @@ func getRootCommand(flagA bool) *cobra.Command {
 				return err
 			}
 
-			err = installStepsRunner.UpdateDotfilesRepository().
+			err = installStepsRunner.UpdateDotfilesRepository("🆙 Updating Dotfiles Repository").
 				InstallingOhMyZSH().
 				DownloadGitSubmodules().
 				InstallInitShellFiles().

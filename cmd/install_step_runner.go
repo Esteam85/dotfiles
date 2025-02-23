@@ -28,18 +28,25 @@ func NewInstallStepBuilder(config *InstallStepsConfig) (*InstallStepsRunner, err
 	}, nil
 }
 
-func (i *InstallStepsRunner) UpdateDotfilesRepository() *InstallStepsRunner {
+func (i *InstallStepsRunner) UpdateDotfilesRepository(description string) *InstallStepsRunner {
 	if i.err != nil {
 		return i
 	}
+	processStep(description, &i.err, func() error {
+		return steps.UpdateDotfilesRepository(i.dotfilesPath)
+	})
+	return i
+}
+
+func processStep(description string, err *error, step func() error) {
 	bar := progressbar.NewOptions(100,
-		progressbar.OptionSetDescription("🆙 Updating Dotfiles Repository"),
+		progressbar.OptionSetDescription(description),
 	)
 	done := make(chan struct{})
 	var wg sync.WaitGroup
 	wg.Add(1)
 	go func() {
-		i.err = steps.UpdateDotfilesRepository(i.dotfilesPath)
+		*err = step()
 		close(done)
 	}()
 	go func(wg *sync.WaitGroup) {
@@ -47,7 +54,7 @@ func (i *InstallStepsRunner) UpdateDotfilesRepository() *InstallStepsRunner {
 			select {
 			case <-done:
 				_ = bar.Set(100)
-				if i.err == nil {
+				if *err == nil {
 					fmt.Println("👍")
 				}
 				wg.Done()
@@ -59,7 +66,6 @@ func (i *InstallStepsRunner) UpdateDotfilesRepository() *InstallStepsRunner {
 		}
 	}(&wg)
 	wg.Wait()
-	return i
 }
 
 func (i *InstallStepsRunner) InstallingOhMyZSH() *InstallStepsRunner {

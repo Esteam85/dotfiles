@@ -6,12 +6,9 @@ import (
 )
 
 func UpdateDotfilesRepository(dotfilesPath string) error {
-	fmt.Println("🆙 Updating Dotfiles Repository")
 	err := exec.Command("git", "-C", dotfilesPath, "pull", "origin", "main").Run()
 	if err != nil {
-		fmt.Println("❌ Dotfiles Repository Updated fails", err.Error())
-		return err
+		return fmt.Errorf(fmt.Sprintf("❌ Dotfiles Repository Updated fails: %s", err.Error()))
 	}
-	fmt.Println("✅ Dotfiles Repository Updated successfully!")
 	return nil
 }

@@ -1,6 +1,12 @@
 package cmd
 
-import "github.com/esteam85/dotfiles/cmd/steps"
+import (
+	"fmt"
+	"github.com/esteam85/dotfiles/cmd/steps"
+	"github.com/schollz/progressbar/v3"
+	"sync"
+	"time"
+)
 
 type InstallStepsConfig struct {
 	installBrewBundle bool
@@ -23,11 +29,36 @@ func NewInstallStepBuilder(config *InstallStepsConfig) (*InstallStepsRunner, err
 }
 
 func (i *InstallStepsRunner) UpdateDotfilesRepository() *InstallStepsRunner {
-	if i.err == nil {
-		if err := steps.UpdateDotfilesRepository(i.dotfilesPath); err != nil {
-			i.err = err
-		}
+	if i.err != nil {
+		return i
 	}
+	bar := progressbar.NewOptions(100,
+		progressbar.OptionSetDescription("🆙 Updating Dotfiles Repository"),
+	)
+	done := make(chan struct{})
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go func() {
+		i.err = steps.UpdateDotfilesRepository(i.dotfilesPath)
+		close(done)
+	}()
+	go func(wg *sync.WaitGroup) {
+		for {
+			select {
+			case <-done:
+				if i.err != nil {
+					fmt.Println("👍")
+				}
+				_ = bar.Set(100)
+				wg.Done()
+				return
+			default:
+				_ = bar.Add(1)
+				time.Sleep(40 * time.Millisecond)
+			}
+		}
+	}(&wg)
+	wg.Wait()
 	return i
 }
 

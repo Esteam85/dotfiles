@@ -63,7 +63,7 @@ func Execute() {
 	var flagA bool
 	rootCmd := getRootCommand(flagA)
 
-	rootCmd.Flags().BoolVarP(&flagA, "all", "a", false, "wil try to Install all steps")
+	rootCmd.Flags().BoolVarP(&flagA, "all", "a", false, "will try to Install all steps")
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)

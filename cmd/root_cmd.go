@@ -39,15 +39,17 @@ func getRootCommand(flagA bool) *cobra.Command {
 				return err
 			}
 
-			err = installStepsRunner.UpdateDotfilesRepository("🆙 Updating Dotfiles Repository").
-				InstallingOhMyZSH().
-				DownloadGitSubmodules().
-				InstallInitShellFiles().
-				InstallBrewBundle().
-				CreateSymlinks().
-				ConfigureMacDefaults().
-				ConfigureExtensionsDefaults().
-				InstallDockerAndColima().
+			err = installStepsRunner.
+				UpdateDotfilesRepository("🆙 Updating Dotfiles Repository").
+				InstallingOhMyZSH("💪 Installing Oh-My-Zsh").
+				DownloadGitSubmodules("💪 Checking git submodules status in .dotfiles!").
+				InstallInitShellFiles("💪 Installing Init Shell files").
+				InstallBrewBundle("💪 Installing bundle from Brewfile!").
+				CreateSymlinks("💪 Creating symlinks").
+				ConfigureMacDefaults("💪 Config Mac defaults").
+				ConfigureExtensionsDefaults("💪 Config extensions defaults apps").
+				CreateDevelopmentFolders("💪 Making Folder for Development").
+				InstallDockerAndColima("💪 Installing Docker and Colima for M1").
 				Error()
 			if err != nil {
 				return err

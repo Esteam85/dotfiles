@@ -6,12 +6,9 @@ import (
 )
 
 func CreateSymlinks(dotfilesPath string) error {
-	fmt.Println("💪 Creating symlinks")
 	err := exec.Command("sh", fmt.Sprintf("%s/symlinks/links.sh", dotfilesPath)).Run()
 	if err != nil {
-		fmt.Println("❌ Failed to create symlinks", err)
-		return nil
+		return fmt.Errorf("❌ Failed to create symlinks: %s", err)
 	}
-	fmt.Println("✅ Symlinks created successfully!")
 	return nil
 }

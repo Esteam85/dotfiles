@@ -1,11 +1,10 @@
 package steps
 
 import (
-	"fmt"
 	"os"
 )
 
-func CreateDevelopmentFolders() {
+func CreateDevelopmentFolders() error {
 	home := os.Getenv("HOME")
 	folders := []string{
 		home + "/Development",
@@ -13,21 +12,16 @@ func CreateDevelopmentFolders() {
 		home + "/.kube",
 		home + "/.aws",
 	}
-
-	fmt.Printf("💪 Making Folder for Development: %v\n", folders)
 	for _, folder := range folders {
 		if _, err := os.Stat(folder); !os.IsNotExist(err) {
-			fmt.Println("👍 Folders already exist.")
-			return
+			return nil
 		}
 	}
 	for _, folder := range folders {
 		err := os.MkdirAll(folder, os.ModePerm)
 		if err != nil {
-			fmt.Println("🛑 Error making folders:", err)
-			return
+			return nil
 		}
 	}
-
-	fmt.Printf("✅ Development folders created successfully in %s!\n", home)
+	return nil
 }

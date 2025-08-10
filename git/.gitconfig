@@ -1,6 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Esteban Enrique Contreras Tapia
+  signingkey = /Users/estcontreras/.ssh/id_ed25519_melisource.pub
+	name = esteam
 	email = esteban.econtreras@mercadolibre.cl
 [init]
 	defaultBranch = main
@@ -11,3 +12,11 @@
 [url "git@github.com-emu:melisource/"]
 	insteadOf = https://github.com/melisource/
 	insteadOf = git@github.com:melisource/
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+
+[gpg]
+  format = ssh
+
+[commit]
+  gpgsign = true

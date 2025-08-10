@@ -19,5 +19,8 @@
   "liveshare.allowGuestTaskControl": true,
   "editor.minimap.enabled": false,
   "redhat.telemetry.enabled": true,
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }

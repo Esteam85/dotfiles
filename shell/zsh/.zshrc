@@ -60,3 +60,13 @@ export PATH="$HOME/.fury/fury_venv/bin:$PATH" # Added by furycli
 #oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# Added by Python Dev Environment Installer
+export HOMEBREW_BIN_LOCATION="/opt/homebrew/bin"
+export PATH="$HOMEBREW_BIN_LOCATION:$PATH"
+# Added by Python Dev Environment Installer
+
+# Added by Fury CLI installation process
+                export FURY_BIN_LOCATION="/Users/estcontreras/.fury/fury_venv/bin"
+                export PATH="$PATH:$FURY_BIN_LOCATION"
+                # Added by Fury CLI installation processexport PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"

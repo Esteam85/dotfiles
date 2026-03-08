@@ -1,4 +1,4 @@
-#REMOVER
+X≈#REMOVER
 rm -rf $HOME/.nvm
 rm $HOME/.zshrc
 rm $HOME/.zshenv
@@ -7,8 +7,6 @@ rm $HOME/.hushlogin
 rm $HOME/Library/Application\ Support/Rocket/rocket.db
 rm $HOME/Library/Application\ Support/Code/User/settings.json
 rm $HOME/icloud
-rm $HOME/.aerospace.toml
-rm $HOME/.zprofile
 
 #ZSH
 ln -s $HOME/.dotfiles/shell/zsh/.zshrc $HOME/.zshrc
@@ -19,13 +17,3 @@ ln -s $HOME/.dotfiles/mac/iterm2/.hushlogin $HOME/.hushlogin
 ln -s $HOME/.dotfiles/mac/Rocket/rocket.db $HOME/Library/Application\ Support/Rocket/rocket.db
 ln -s $HOME/.dotfiles/ides/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 ln -s $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/ $HOME/icloud
-
-#AEROSPACE
-ln -s $HOME/.dotfiles/mac/aerospace/.aerospace.toml $HOME/.aerospace.toml
-
-#ZSH PROFILE
-ln -s $HOME/.dotfiles/shell/zsh/.zprofile $HOME/.zprofile
-
-#GH CLI
-rm $HOME/.config/gh/config.yml
-ln -s $HOME/.dotfiles/ides/gh/config.yml $HOME/.config/gh/config.yml

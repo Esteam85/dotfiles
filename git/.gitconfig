@@ -20,3 +20,5 @@
 
 [commit]
   gpgsign = true
+[core]
+	hooksPath = /Users/estcontreras/.config/git/hooks

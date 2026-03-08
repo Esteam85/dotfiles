@@ -6,3 +6,6 @@ export HOMEBREW_BUNDLE_FILE="$HOME/.dotfiles/mac/brew/Brewfile"
 
 #Oh-my-zsh
 export ZSH_CUSTOM="$HOME/.dotfiles/mac/oh-my-zsh/custom"
+
+#PRE-COMMIT
+export PRE_COMMIT_ALLOW_NO_CONFIG=1

@@ -1,24 +1,17 @@
-# This is Git's per-user configuration file.
 [user]
-  signingkey = /Users/estcontreras/.ssh/id_ed25519_melisource.pub
-	name = esteam
-	email = esteban.econtreras@mercadolibre.cl
+  name = Esteban Contreras Tapia
+  email = contacto@econtreras.net
+
 [init]
-	defaultBranch = main
+  defaultBranch = main
+
 [url "git@github.com:"]
-	insteadOf = git://github.com/
-	insteadOf = https://github.com//
-	insteadOf = https://github.com/
-[url "git@github.com-emu:melisource/"]
-	insteadOf = https://github.com/melisource/
-	insteadOf = git@github.com:melisource/
+  insteadOf = https://github.com/
+  insteadOf = git://github.com/
+  insteadOf = https://github.com//
+
 [url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
+  insteadOf = https://github.com/
 
-[gpg]
-  format = ssh
-
-[commit]
-  gpgsign = true
-[core]
-	hooksPath = /Users/estcontreras/.config/git/hooks
+[include]
+  path = ~/.gitconfig-work

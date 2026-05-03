@@ -4,13 +4,15 @@ alias w.='(webstorm $PWD &>/dev/null &)'
 alias g.='(goland $PWD &>/dev/null &)'
 alias i.='(idea $PWD &>/dev/null &)'
 alias p.='(pycharm $PWD &>/dev/null &)'
+alias ac.='(goland $HOME/Development/fury_cx-cases-actions &>/dev/null &)'
+alias ap.='(goland $HOME/Development/fury_cx-cases-api &>/dev/null &)'
 
 #apps
 alias cat='ccat'
 
 #os
 alias o.='open .'
-alias cdd='cd $HOME/Develop'
+alias cdd='cd $HOME/Development'
 alias s.='source $HOME/.zshrc'
 alias zshrc='code $DOTFILES_PATH/shell/zsh/.zshrc'
 

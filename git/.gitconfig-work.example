@@ -1,0 +1,16 @@
+[user]
+  name = YOUR_WORK_USERNAME
+  email = your.email@company.com
+  signingkey = /Users/YOUR_USER/.ssh/your_work_key.pub
+
+[gpg]
+  format = ssh
+
+[commit]
+  gpgsign = true
+
+[core]
+  hooksPath = /Users/YOUR_USER/.config/git/hooks
+
+[url "git@github.com:YOUR_ORG/"]
+  insteadOf = https://github.com/YOUR_ORG/

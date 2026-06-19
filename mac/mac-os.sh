@@ -32,3 +32,7 @@ defaults write -g com.apple.keyboard.fnState -bool false
 
 # Disabling Autocorrect with a Defaults Command Line String in OS X
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Menu bar icon spacing
+defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 6
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 6

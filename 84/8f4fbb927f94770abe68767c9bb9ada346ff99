@@ -1,0 +1,49 @@
+git/.gitconfig
+  s_6e058fd64e67c8::t_5a03777bba1dbf 3-4,17,19-26
+ides/vscode/settings.json
+  s_6e058fd64e67c8::t_5a03777bba1dbf 26-28
+shell/zsh/.zshrc
+  h_30f52f02c2a37b 164-172
+  s_09274ed0cb89c2::t_680233678cea61 154-157
+shell/zsh/.zprofile
+  s_5b22da0edc46d5::t_7fb6ac19962c49 4-6
+shell/zsh/.zshenv
+  s_5b22da0edc46d5::t_eb3223eccae488 3-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "848f4fbb927f94770abe68767c9bb9ada346ff99",
+  "prompts": {},
+  "humans": {
+    "h_30f52f02c2a37b": {
+      "author": "Esteban Enrique Contreras Tapia <contacto@econtreras.net>"
+    }
+  },
+  "sessions": {
+    "s_09274ed0cb89c2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7105cc22-499e-4777-ab46-78492bebcf4d",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Esteban Enrique Contreras Tapia <contacto@econtreras.net>"
+    },
+    "s_5b22da0edc46d5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "afcde602-3b2f-4ba9-ab27-a2e5aaf63d99",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Esteban Enrique Contreras Tapia <contacto@econtreras.net>"
+    },
+    "s_6e058fd64e67c8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "258686a5-8a86-41e9-b871-a044a71693d0",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Esteban Enrique Contreras Tapia <contacto@econtreras.net>"
+    }
+  }
+}

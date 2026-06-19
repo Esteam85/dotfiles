@@ -23,5 +23,7 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "git.openRepositoryInParentFolders": "always"
+  "git.openRepositoryInParentFolders": "always",
+  "git.path": "/Users/estcontreras/.git-ai/bin/git",
+  "chat.useHooks": true
 }

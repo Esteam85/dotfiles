@@ -76,7 +76,7 @@ fury() {
     fi
 
     mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
-    printf '\n# BEGIN fury-emu-temp\nHost github.com-emu\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_ed25519_melisource\n  IdentitiesOnly yes\n  AddKeysToAgent yes\n  UseKeychain yes\n# END fury-emu-temp\n' >> "$ssh_config"
+    printf '\n# BEGIN fury-emu-temp\nHost github.com-emu\n  HostName github.com\n  User git\n# END fury-emu-temp\n' >> "$ssh_config"
     chmod 600 "$ssh_config"
 
     command fury "$@"
@@ -150,3 +150,24 @@ precmd_functions+=(_es_wrapper_guard)
 
 # Local secrets (not in repo)
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+
+# Claude Code CLI
+_claude_bin=$(ls -d "$HOME/Library/Application Support/Claude/claude-code"/*/claude.app/Contents/MacOS 2>/dev/null | sort -V | tail -1)
+[[ -n "$_claude_bin" ]] && export PATH="$_claude_bin:$PATH"
+unset _claude_bin
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Internal Python Registry
+export PIP_INDEX_URL='https://pypi.artifacts.furycloud.io/simple'
+export UV_INDEX_URL='https://pypi.artifacts.furycloud.io/simple'
+
+# Added by git-ai installer on Fri May 29 19:20:57 -04 2026
+export PATH="/Users/estcontreras/.git-ai/bin:$PATH"
+
+# Figurine welcome banner for Claude Code
+claude() {
+  figurine -f "Standard.flf" "Welcome to Claude Code!"
+  /Users/estcontreras/.local/bin/claude "$@"
+}
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"

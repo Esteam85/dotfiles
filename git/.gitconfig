@@ -1,6 +1,7 @@
 [user]
   name = Esteban Contreras Tapia
-  email = contacto@econtreras.net
+	email = esteban.econtreras@mercadolibre.cl
+	signingkey = /Users/estcontreras/.ssh/meli.pub
 
 [init]
   defaultBranch = main
@@ -13,5 +14,13 @@
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
 
-[include]
+[includeIf "gitdir:~/Development/meli/"]
   path = ~/.gitconfig-work
+[core]
+	hooksPath = /Users/estcontreras/.config/git/hooks
+	symlinks = false
+[gpg "ssh"]
+	allowedSignersFile = /Users/estcontreras/.ssh/allowed_signers
+[trace2]
+	eventTarget = af_unix:stream:/Users/estcontreras/.git-ai/internal/daemon/trace2.sock
+	eventNesting = 10

@@ -1,0 +1,24 @@
+mac/mac-os.sh
+  s_6e058fd64e67c8::t_8e33c04c3aacfd 34-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "0c673ee22eb1632cf50b10769d832c534bd1694f",
+  "prompts": {},
+  "humans": {
+    "h_30f52f02c2a37b": {
+      "author": "Esteban Enrique Contreras Tapia <contacto@econtreras.net>"
+    }
+  },
+  "sessions": {
+    "s_6e058fd64e67c8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "258686a5-8a86-41e9-b871-a044a71693d0",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Esteban Enrique Contreras Tapia <contacto@econtreras.net>"
+    }
+  }
+}
